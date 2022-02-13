@@ -1,29 +1,58 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-app>
+    <Header />
+    <main>
+      <div v-if='!onSearch'>
+        <Categories  />
+        <SubCategories />
+        <Grid />
+      </div>
+      <div v-else>
+        <Search />
+      </div>
+    </main>
+  </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script>
+import { mapState} from 'vuex'
+import Header from "@/components/Header.vue";
+import Categories from "@/components/Categories.vue";
+import SubCategories from "@/components/SubCategories.vue";
+import Grid from "@/components/Grid.vue";
+import Search from "@/components/Search.vue";
 
-export default Vue.extend({
-  name: 'App',
+
+export default {
+
+  name: 'IndexPage',
   components: {
-    HelloWorld
+    Header,
+    Categories,
+    SubCategories,
+    Grid,
+    Search,
+  },
+  computed:{
+    ...mapState(['onSearch']),
   }
-});
+}
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+@font-face {
+  font-family: "Soleil";
+  src: local("Soleil"),
+    url(./assets/fonts/Soleil/Soleil_Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Soleil-Bold";
+  src: local("Soleil-Bold"),
+    url(./assets/fonts/Soleil/Soleil_Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Soleil-Light";
+  src: local("Soleil-Light"),
+    url(./assets/fonts/Soleil/Soleil_Light.ttf) format("truetype");
 }
 </style>
