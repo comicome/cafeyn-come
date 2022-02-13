@@ -9,34 +9,37 @@
         md="4"
         lg="2"
       >
-        <Issue :issue="newspaper"/>
+        <Issue :issue="newspaper" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {mapGetters} from 'vuex';
-import Issue from "@/components/Issue.vue";
+import Vue from 'vue'
+import { mapGetters } from 'vuex'
+import Issue from '@/components/Issue.vue'
 
 export default Vue.extend({
   name: 'NewsPapers',
   components: {
-    Issue
+    Issue,
   },
-    computed:{
-    ...mapGetters(['filteredPublicationsCategory'])
+  computed: {
+    ...mapGetters(['filteredPublicationsCategory']),
   },
   methods: {
-     isMobileOrTablet(): boolean {
-      if(/Android|webOS|iPhone|iPod|BlackBerry|Tablet|iPad|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isMobileOrTablet(): boolean {
+      if (
+        /Android|webOS|iPhone|iPod|BlackBerry|Tablet|iPad|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
         return false
-      }
-       else {
+      } else {
         return true
       }
-    }
-  }
+    },
+  },
 })
 </script>

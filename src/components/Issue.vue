@@ -1,6 +1,12 @@
 <template>
   <v-card elevation="0">
-    <v-img class="issue" contain :src="issue.coverUrl"  height="200" width="170"/>
+    <v-img
+      class="issue"
+      contain
+      :src="issue.coverUrl"
+      height="200"
+      width="170"
+    />
     <v-card-title class="publication-title pl-0 pl-sm-3 pl-md-4">
       {{ trimTitle(issue.publication.title) }}
     </v-card-title>
@@ -10,62 +16,61 @@
   </v-card>
 </template>
 <script lang="ts">
- import Vue from 'vue'
+import Vue from 'vue'
 export default Vue.extend({
   name: 'IssueComponent',
-  data: ()=> ({
+  data: () => ({
     months: [
-      "janv.",
-      "févr.",
-      "mars",
-      "avr.",
-      "mai",
-      "juin",
-      "juill.",
-      "août",
-      "sept.",
-      "oct.",
-      "nov.",
-      "déc.",
-    ]
+      'janv.',
+      'févr.',
+      'mars',
+      'avr.',
+      'mai',
+      'juin',
+      'juill.',
+      'août',
+      'sept.',
+      'oct.',
+      'nov.',
+      'déc.',
+    ],
   }),
   props: {
     issue: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  methods:{
+  methods: {
     readableDate(releaseDate: Date): string {
-      const dateToParse = new Date(releaseDate);
-      const dayNumber = dateToParse.getDate();
-      const year = dateToParse.getFullYear();
-      const month = dateToParse.getMonth() - 1;
-      return `${dayNumber} ${this.months[month]} ${year}`;
+      const dateToParse = new Date(releaseDate)
+      const dayNumber = dateToParse.getDate()
+      const year = dateToParse.getFullYear()
+      const month = dateToParse.getMonth() - 1
+      return `${dayNumber} ${this.months[month]} ${year}`
     },
 
     trimTitle(title: string): string {
       if (title.length > 19) {
-        return `${title.slice(0, 19)}...`;
+        return `${title.slice(0, 19)}...`
       } else {
-        return title;
+        return title
       }
-    }
-  }
+    },
+  },
 })
 </script>
 
 <style scoped>
-
 .publication-title {
-  font-family: "Soleil", Helvetica, Arial;
+  font-family: 'Soleil', Helvetica, Arial;
   font-size: 14px;
   color: #1e323d;
   padding: 5px 0px 10px 5px;
 }
 
 .publication-date {
-  font-family: "Soleil", Helvetica, Arial;
+  font-family: 'Soleil', Helvetica, Arial;
   font-size: 12px;
   color: #536067;
   padding-left: 5px;
@@ -77,11 +82,9 @@ export default Vue.extend({
   top: 0;
   transition: top ease 0.5s;
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
-  transition: all .3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .issue:hover {
   top: -10px;
 }
-
-
 </style>

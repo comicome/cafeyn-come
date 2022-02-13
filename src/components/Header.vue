@@ -1,17 +1,24 @@
 <template>
-  <v-app-bar app absolute color="white" elevation="0" height="80" class="navbar">
+  <v-app-bar
+    app
+    absolute
+    color="white"
+    elevation="0"
+    height="80"
+    class="navbar"
+  >
     <v-btn class="hidden-sm-and-up" icon @click="setOnSearch(!onSearch)">
-        <v-icon>mdi-magnify</v-icon>
+      <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
     <v-toolbar-title class="cafeyn-logo mr-lg-16">
-     <v-img
-      alt="Cafeyn Logo"
-      contain
-      :src="require('../assets/img/cafeyn.svg')"
-      transition="scale-transition"
-      height="40"
-      :width="isMobile()"
+      <v-img
+        alt="Cafeyn Logo"
+        contain
+        :src="require('../assets/img/cafeyn.svg')"
+        transition="scale-transition"
+        height="40"
+        :width="isMobile()"
       />
     </v-toolbar-title>
     <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -35,13 +42,13 @@
     <v-spacer class="hidden-sm-and-down"></v-spacer>
 
     <div v-if="!onSearch" class="d-flex align-center pr-sm-5 pl-sm-16">
-     <v-btn
+      <v-btn
         elevation="1"
         icon
         outlined
         height="38"
         width="38"
-        class="rounded-circle gift-btn mr-2  mr-sm-4"
+        class="rounded-circle gift-btn mr-2 mr-sm-4"
         color="#ececec"
       >
         <a target="_blank" href="https://www.cafeyn.co/fr/gift/offers">
@@ -61,12 +68,12 @@
             elevation="1"
             outlined
             rounded
-            color="grey lighten-2" 
-            class="hidden-md-and-up menu ml-2 ml-sm-4"  
-            v-bind="attrs" 
+            color="grey lighten-2"
+            class="hidden-md-and-up menu ml-2 ml-sm-4"
+            v-bind="attrs"
             v-on="on"
           >
-          <v-img
+            <v-img
               alt="Cafeyn Logo"
               contain
               :src="require('../assets/img/lk-login.svg')"
@@ -82,23 +89,43 @@
           </v-list-item>
         </v-list>
       </v-menu>
-    <v-btn class="header-btn hidden-sm-and-down ml-lg-5" rounded outlined color="#1e323d" dark> Se connecter </v-btn>
-    <v-btn class="header-btn hidden-sm-and-down ml-lg-5 mr-lg-10 login-btn" rounded> S'inscrire </v-btn>
+      <v-btn
+        class="header-btn hidden-sm-and-down ml-lg-5"
+        rounded
+        outlined
+        color="#1e323d"
+        dark
+      >
+        Se connecter
+      </v-btn>
+      <v-btn
+        class="header-btn hidden-sm-and-down ml-lg-5 mr-lg-10 login-btn"
+        rounded
+      >
+        S'inscrire
+      </v-btn>
     </div>
-    <v-btn small v-show="onSearch" class="mr-10" icon outlined @click="setOnSearch(!onSearch)">
-        <v-icon>mdi-close</v-icon>
+    <v-btn
+      small
+      v-show="onSearch"
+      class="mr-10"
+      icon
+      outlined
+      @click="setOnSearch(!onSearch)"
+    >
+      <v-icon>mdi-close</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState, mapMutations} from 'vuex'
+import Vue from 'vue'
+import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
   name: 'HeaderComponent',
-    data: () => ({
+  data: () => ({
     timeout: null,
-    items: ['Se connecter', "S'inscrire"]
+    items: ['Se connecter', "S'inscrire"],
   }),
   computed: {
     ...mapState(['onSearch']),
@@ -108,39 +135,39 @@ export default Vue.extend({
       },
       set(value: string) {
         this.$store.commit('setSearchText', value)
-      }
-    }
+      },
+    },
   },
-    methods: {
+  methods: {
     ...mapMutations(['setOnSearch']),
-     isMobile(): string {
-      if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isMobile(): string {
+      if (
+        /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
         return '100%'
-      }
-      else if(/Tablet|iPad/i.test(navigator.userAgent)){
+      } else if (/Tablet|iPad/i.test(navigator.userAgent)) {
+        return '110'
+      } else {
         return '110'
       }
-       else {
-        return '110'
-      }
-    }
-  }
-
-});
-
+    },
+  },
+})
 </script>
 
 <style scoped>
 @media (max-width: 400px) {
-  .navbar{
+  .navbar {
     min-height: 70px !important;
     display: flex;
     align-items: center;
   }
-  .cafeyn-logo{
+  .cafeyn-logo {
     width: 190px;
   }
-  .v-btn--rounded.menu{
+  .v-btn--rounded.menu {
     padding: 0 10px !important;
   }
   .gift-btn {
@@ -149,28 +176,26 @@ export default Vue.extend({
   }
 }
 
-.separator{
+.separator {
   height: 40px;
 }
 
-.search-field{
+.search-field {
   color: #536067;
   border: 1px solid #e0e0e0;
 }
 
-div.v-toolbar__content{
+div.v-toolbar__content {
   border-bottom: 1px solid #ececec !important;
 }
 
-.header-btn{
+.header-btn {
   font-family: 'Soleil-Bold';
   font-size: 10px !important;
 }
 
-button.login-btn{
-  color: #1e323d !important; 
+button.login-btn {
+  color: #1e323d !important;
   background-color: #fedc84 !important;
 }
-
 </style>
-

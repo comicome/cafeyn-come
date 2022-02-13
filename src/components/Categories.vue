@@ -11,7 +11,11 @@
         <v-btn
           v-for="category in categories"
           :key="category"
-          :class="`${category === selectedCategory ? 'filters-btn active-btn' : 'filters-btn'} category-btn mr-md-5 mr-lg-3 ml-sm-5 mr-sm-3`"
+          :class="`${
+            category === selectedCategory
+              ? 'filters-btn active-btn'
+              : 'filters-btn'
+          } category-btn mr-md-5 mr-lg-3 ml-sm-5 mr-sm-3`"
           text
           @click="setSelectedCategory(category)"
         >
@@ -23,43 +27,42 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {mapState,  mapMutations} from 'vuex';
+import Vue from 'vue'
+import { mapState, mapMutations } from 'vuex'
 
 export default Vue.extend({
   name: 'CategoriesComponent',
-  data: ()=> ({
-  categories: [
-    "Accueil",
-    "Quotidiens",
-    "Actualités",
-    "People & TV",
-    "Technologie",
-    "Auto & Moto",
-    "Culture",
-    "Savoirs",
-  ]
+  data: () => ({
+    categories: [
+      'Accueil',
+      'Quotidiens',
+      'Actualités',
+      'People & TV',
+      'Technologie',
+      'Auto & Moto',
+      'Culture',
+      'Savoirs',
+    ],
   }),
-  computed:{
+  computed: {
     ...mapState(['selectedCategory']),
   },
-  methods:{
-  ...mapMutations(['setSelectedCategory'])
-  }
-
+  methods: {
+    ...mapMutations(['setSelectedCategory']),
+  },
 })
 </script>
 
 <style scoped>
 .categories-container {
-    height: 100px;
-    margin-top: 68px;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
+  height: 100px;
+  margin-top: 68px;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
-.filters-btn{
-  font-family: "Soleil-Bold", Helvetica, Arial;
+.filters-btn {
+  font-family: 'Soleil-Bold', Helvetica, Arial;
   font-size: 12px;
   letter-spacing: 0.9px;
 }
@@ -77,7 +80,7 @@ export default Vue.extend({
   button.v-btn:not(.v-btn--round).v-size--default {
     padding: 0 11px;
   }
-  .categry-group{
+  .categry-group {
     padding: 16px 24px;
   }
   .categories-container {
@@ -88,19 +91,17 @@ export default Vue.extend({
 }
 
 @media (max-width: 600px) {
-  .navbar{
+  .navbar {
     min-height: 70px !important;
     display: flex;
     align-items: center;
   }
-    button.v-btn:not(.v-btn--round).v-size--default {
+  button.v-btn:not(.v-btn--round).v-size--default {
     padding: 0 19px;
   }
-
-
 }
 @media (max-width: 900px) {
-  .categry-group{
+  .categry-group {
     border-top: 1px solid #ececec;
   }
 }
