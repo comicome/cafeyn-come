@@ -1131,7 +1131,7 @@
         "title": "L’Eclair des Pyrénées",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Savoir",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1259,7 +1259,7 @@
         "title": "Croix du Midi - Gard",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Technologie",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1291,7 +1291,7 @@
         "title": "Croix du Midi - Aude",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Technologie",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1323,7 +1323,7 @@
         "title": "Croix du Midi - Hérault",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Actualités",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1355,7 +1355,7 @@
         "title": "Croix du Midi - Pyrénées Orientales",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "People & TV",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1387,7 +1387,7 @@
         "title": "La Dépêche du Bassin",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Culture",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1419,7 +1419,7 @@
         "title": "Mayenne infos",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Culture",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1515,7 +1515,7 @@
         "title": "Minuit Sport",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Auto & Moto",
           "subCategories": [
             {
               "categoryId": 233,
@@ -1547,7 +1547,7 @@
         "title": "Côtés Yvelines Versailles-Rambouillet",
         "category": {
           "categoryId": 233,
-          "name": "Quotidiens",
+          "name": "Auto & Moto",
           "subCategories": [
             {
               "categoryId": 233,

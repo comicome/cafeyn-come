@@ -21,13 +21,13 @@
           slider-color="#67839B"
           slider-size="4"
         >
-          <v-tab active-class="subcategory-active" class="subcategory"
+          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Tout')"
             >Tout</v-tab
           >
-          <v-tab active-class="subcategory-active" class="subcategory"
+          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Presse Nationale')"
             >Presse Nationale</v-tab
           >
-          <v-tab active-class="subcategory-active" class="subcategory"
+          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Presse Régionale')"
             >Presse Régionale</v-tab
           >
         </v-tabs>
@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 export default Vue.extend({
   name: 'SubCategories',
@@ -48,6 +48,9 @@ export default Vue.extend({
   }),
   computed: {
     ...mapState(['selectedCategory', 'subCategories']),
+  },
+  methods: {
+    ...mapMutations(['setSelectedSubCategory']),
   },
 })
 </script>

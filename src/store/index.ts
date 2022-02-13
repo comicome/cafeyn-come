@@ -15,22 +15,31 @@ export default new Vuex.Store({
   },
   getters: {
     filteredPublicationsCategory: (state) => {
-      return state.selectedCategory === 'Accueil'
+      if (state.selectedSubCategory === 'Tout') {
+        return state.selectedCategory === 'Accueil'
         ? state.publications.issues
         : filter(
             state.publications.issues,
             (issue: any) =>
               issue.publication.category.name === state.selectedCategory
           )
-    },
-    filteredPublicationsSubCategory: (state) => {
-      return state.selectedCategory === 'Tout'
+      } else {
+        return state.selectedCategory === 'Accueil'
         ? state.publications.issues
         : filter(
             state.publications.issues,
             (issue: any) =>
-              issue.publication.category.subCategories[0].name ===
+              issue.publication.category.name === state.selectedCategory && issue.publication.category.subCategories[0].name ===
               state.selectedSubCategory
+          )
+      }
+
+    },
+    searchIssues: (state) => {
+      return filter(
+            state.publications.issues,
+            (issue: any) =>
+              issue.publication.title.match(state.searchText)
           )
     },
   },
@@ -41,12 +50,13 @@ export default new Vuex.Store({
     setOnSearch(state, boolean) {
       return (state.onSearch = boolean)
     },
+    setSearchText(state, text: string) {
+      console.log(text)
+      return (state.searchText = text)
+    },
     setSelectedSubCategory(state, subCategory) {
       return (state.selectedSubCategory = subCategory)
-    },
-    setSearchText(state, value) {
-      return (state.searchText = value)
-    },
+    }
   },
   actions: {},
   modules: {},
