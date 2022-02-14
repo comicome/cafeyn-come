@@ -157,44 +157,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 400px) {
-  .navbar {
-    min-height: 70px !important;
-    display: flex;
-    align-items: center;
-  }
-  .cafeyn-logo {
-    width: 190px;
-  }
-  .v-btn--rounded.menu {
-    padding: 0 10px !important;
-  }
-  .gift-btn {
-    height: 36px !important;
-    width: 36px !important;
-  }
-}
-
-.separator {
-  height: 40px;
-}
-
-.search-field {
-  color: $grey-cafeyn;
-  border: 1px solid #e0e0e0;
-}
-
-div.v-toolbar__content {
-  border-bottom: 1px solid $border-color !important;
-}
-
-.header-btn {
-  font-family: 'Soleil-Bold';
-  font-size: 10px !important;
-}
-
-button.login-btn {
-  color: #1e323d !important;
-  background-color: $yellow-cafeyn !important;
-}
+@import '../scss/header.scss';
 </style>

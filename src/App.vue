@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @font-face {
   font-family: 'Soleil';
   src: local('Soleil'),
@@ -52,5 +52,9 @@ export default {
   font-family: 'Soleil-Light';
   src: local('Soleil-Light'),
     url(./assets/fonts/Soleil/Soleil_Light.ttf) format('truetype');
+}
+
+.v-application {
+  font-family: 'Soleil', sans-serif !important;
 }
 </style>

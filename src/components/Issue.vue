@@ -3,6 +3,7 @@
     <v-img
       class="issue"
       contain
+      :aspect-ratio="issue.ratio"
       :src="issue.coverUrl"
       height="200"
       width="170"
@@ -17,6 +18,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import Issue from '@/store/interfaces/issue'
 export default Vue.extend({
   name: 'IssueComponent',
   data: () => ({
@@ -37,7 +39,7 @@ export default Vue.extend({
   }),
   props: {
     issue: {
-      type: Object,
+      type: Object as () => Issue,
       required: true,
     },
   },
@@ -62,29 +64,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.publication-title {
-  font-family: 'Soleil', Helvetica, Arial;
-  font-size: 14px;
-  color: #1e323d;
-  padding: 5px 0px 10px 5px;
-}
-
-.publication-date {
-  font-family: 'Soleil', Helvetica, Arial;
-  font-size: 12px;
-  color: #536067;
-  padding-left: 5px;
-}
-
-.issue {
-  cursor: pointer;
-  position: relative;
-  top: 0;
-  transition: top ease 0.5s;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.issue:hover {
-  top: -10px;
-}
+@import '../scss/issue.scss';
 </style>

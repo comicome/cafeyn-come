@@ -1,0 +1,26 @@
+.subcategories-container {
+  height: 167px;
+  border-bottom: 1px solid $border-color;
+}
+
+.subcategory {
+  font-family: 'Soleil-bold', Helvetica, Arial;
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.v-tab--active.subcategory-active {
+  color: $blue-cafeyn;
+}
+
+.category-title {
+  font-family: 'Soleil-Light', Helvetica, Arial;
+  font-size: 28px;
+  color: $darkblue-cafeyn;
+}
+
+.category-subtitle {
+  font-family: 'Soleil', Helvetica, Arial;
+  font-size: 16px;
+  color: $blue-cafeyn;
+}

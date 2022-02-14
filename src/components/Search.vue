@@ -84,6 +84,9 @@ export default Vue.extend({
           this.isLoading = false
         }
       }, 1000)
+      if (this.searchText == 0) {
+        this.isLoading = false
+      }
     },
   },
 })

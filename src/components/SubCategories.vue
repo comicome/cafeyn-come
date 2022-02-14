@@ -22,23 +22,14 @@
           slider-size="4"
         >
           <v-tab
+            v-for="subCategory in subCategories"
+            :key="subCategory"
             active-class="subcategory-active"
             class="subcategory"
-            @click="setSelectedSubCategory('Tout')"
-            >Tout</v-tab
+            @click="setSelectedSubCategory(subCategory)"
           >
-          <v-tab
-            active-class="subcategory-active"
-            class="subcategory"
-            @click="setSelectedSubCategory('Presse Nationale')"
-            >Presse Nationale</v-tab
-          >
-          <v-tab
-            active-class="subcategory-active"
-            class="subcategory"
-            @click="setSelectedSubCategory('Presse Régionale')"
-            >Presse Régionale</v-tab
-          >
+            {{ subCategory }}
+          </v-tab>
         </v-tabs>
       </v-col>
     </v-row>
@@ -65,30 +56,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.subcategories-container {
-  height: 167px;
-  border-bottom: 1px solid $border-color;
-}
-
-.subcategory {
-  font-family: 'Soleil-bold', Helvetica, Arial;
-  font-size: 12px;
-  color: #8b8b8b;
-}
-
-.v-tab--active.subcategory-active {
-  color: $blue-cafeyn;
-}
-
-.category-title {
-  font-family: 'Soleil-Light', Helvetica, Arial;
-  font-size: 28px;
-  color: $darkblue-cafeyn;
-}
-
-.category-subtitle {
-  font-family: 'Soleil', Helvetica, Arial;
-  font-size: 16px;
-  color: #1e323d;
-}
+@import '../scss/subcategories.scss';
 </style>

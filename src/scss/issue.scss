@@ -1,0 +1,25 @@
+.publication-title {
+  font-family: 'Soleil', Helvetica, Arial;
+  font-size: 14px;
+  color: $blue-cafeyn;
+  padding: 5px 0px 10px 5px;
+}
+
+.publication-date {
+  font-family: 'Soleil', Helvetica, Arial;
+  font-size: 12px;
+  color: $grey-cafeyn;
+  padding-left: 5px;
+}
+
+.issue {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.issue:hover {
+  top: -10px;
+}
