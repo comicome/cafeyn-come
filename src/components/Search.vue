@@ -1,14 +1,13 @@
 <template>
   <v-container class="mt-16">
     <v-text-field
-      ref="search"
       v-model="text"
       prepend-inner-icon="mdi-magnify"
       placeholder="Rechercher un titre de presse ou un article"
       @input="onInput($event)"
     >
     </v-text-field>
-    <v-row v-if="onSearch" class="pa-5">
+    <v-row v-if="isLoading" class="pa-5">
       <v-col
         v-for="newspaper in [1, 2, 3, 4, 5, 6]"
         :key="newspaper"
@@ -53,9 +52,15 @@ export default Vue.extend({
   },
   data: () => ({
     timeout: 0,
+    isLoading: false,
   }),
   computed: {
-    ...mapState(['selectedCategory', 'subCategories', 'searchText']),
+    ...mapState([
+      'selectedCategory',
+      'subCategories',
+      'searchText',
+      'inResearch',
+    ]),
     ...mapGetters(['searchIssues']),
     text: {
       get() {
@@ -65,20 +70,20 @@ export default Vue.extend({
         this.$store.commit('setSearchText', value)
       },
     },
-    search(): any {
-      return this.$refs.search as any
-    },
   },
   methods: {
     ...mapMutations(['setSearchText']),
     onInput(event: string) {
+      this.isLoading = true
       if (this.timeout) {
         clearTimeout(this.timeout)
       }
-
       this.timeout = setTimeout(() => {
-        this.setSearchText(event)
-      }, 500)
+        this.$store.commit('setSearchText', event)
+        if (event.length > 0 || this.searchText.length == 0) {
+          this.isLoading = false
+        }
+      }, 1000)
     },
   },
 })

@@ -36,6 +36,9 @@ export default new Vuex.Store({
       }
     },
     searchIssues: (state) => {
+      if (state.searchText.length === 0) {
+        return []
+      }
       return filter(state.publications.issues, (issue: any) =>
         issue.publication.title.match(state.searchText)
       )
