@@ -7,7 +7,7 @@
     height="80"
     class="navbar"
   >
-    <v-btn class="hidden-sm-and-up" icon @click="setOnSearch(!onSearch)">
+    <v-btn class="hidden-sm-and-up" icon @click="setInResearch(!inResearch)">
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
@@ -23,25 +23,24 @@
     </v-toolbar-title>
     <v-spacer class="hidden-md-and-up"></v-spacer>
     <v-responsive
-      v-show="!onSearch"
+      v-show="!inResearch"
       class="mr-0 ml-lg-16 mr-md-3 hidden-xs-only transition-swing"
       max-width="420"
     >
       <v-text-field
         ref="search"
-        v-model="text"
         label="Rechercher un titre de presse ou un article"
         flat
         hide-details
         append-icon="mdi-magnify"
         solo
         class="search-field"
-        @click="setOnSearch(true)"
+        @click="setInResearch(true)"
       />
     </v-responsive>
     <v-spacer class="hidden-sm-and-down"></v-spacer>
 
-    <div v-if="!onSearch" class="d-flex align-center pr-sm-5 pl-sm-16">
+    <div v-if="!inResearch" class="d-flex align-center pr-sm-5 pl-sm-16">
       <v-btn
         elevation="1"
         icon
@@ -107,11 +106,11 @@
     </div>
     <v-btn
       small
-      v-show="onSearch"
+      v-show="inResearch"
       class="mr-10"
       icon
       outlined
-      @click="setOnSearch(!onSearch)"
+      @click="setInResearch(!inResearch)"
     >
       <v-icon>mdi-close</v-icon>
     </v-btn>
@@ -128,7 +127,7 @@ export default Vue.extend({
     items: ['Se connecter', "S'inscrire"],
   }),
   computed: {
-    ...mapState(['onSearch']),
+    ...mapState(['inResearch']),
     text: {
       get() {
         return this.$store.state.searchText
@@ -139,7 +138,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    ...mapMutations(['setOnSearch']),
+    ...mapMutations(['setInResearch']),
     isMobile(): string {
       if (
         /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -157,7 +156,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @media (max-width: 400px) {
   .navbar {
     min-height: 70px !important;
@@ -181,12 +180,12 @@ export default Vue.extend({
 }
 
 .search-field {
-  color: #536067;
+  color: $grey-cafeyn;
   border: 1px solid #e0e0e0;
 }
 
 div.v-toolbar__content {
-  border-bottom: 1px solid #ececec !important;
+  border-bottom: 1px solid $border-color !important;
 }
 
 .header-btn {
@@ -196,6 +195,6 @@ div.v-toolbar__content {
 
 button.login-btn {
   color: #1e323d !important;
-  background-color: #fedc84 !important;
+  background-color: $yellow-cafeyn !important;
 }
 </style>

@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     selectedCategory: 'Accueil',
-    onSearch: false,
+    inResearch: false,
     selectedSubCategory: 'Tout',
     searchText: '',
     publications: require('@/assets/json/category_quotidien.json'),
@@ -17,46 +17,43 @@ export default new Vuex.Store({
     filteredPublicationsCategory: (state) => {
       if (state.selectedSubCategory === 'Tout') {
         return state.selectedCategory === 'Accueil'
-        ? state.publications.issues
-        : filter(
-            state.publications.issues,
-            (issue: any) =>
-              issue.publication.category.name === state.selectedCategory
-          )
+          ? state.publications.issues
+          : filter(
+              state.publications.issues,
+              (issue: any) =>
+                issue.publication.category.name === state.selectedCategory
+            )
       } else {
         return state.selectedCategory === 'Accueil'
-        ? state.publications.issues
-        : filter(
-            state.publications.issues,
-            (issue: any) =>
-              issue.publication.category.name === state.selectedCategory && issue.publication.category.subCategories[0].name ===
-              state.selectedSubCategory
-          )
+          ? state.publications.issues
+          : filter(
+              state.publications.issues,
+              (issue: any) =>
+                issue.publication.category.name === state.selectedCategory &&
+                issue.publication.category.subCategories[0].name ===
+                  state.selectedSubCategory
+            )
       }
-
     },
     searchIssues: (state) => {
-      return filter(
-            state.publications.issues,
-            (issue: any) =>
-              issue.publication.title.match(state.searchText)
-          )
+      return filter(state.publications.issues, (issue: any) =>
+        issue.publication.title.match(state.searchText)
+      )
     },
   },
   mutations: {
     setSelectedCategory(state, category) {
       return (state.selectedCategory = category)
     },
-    setOnSearch(state, boolean) {
-      return (state.onSearch = boolean)
+    setInResearch(state, boolean) {
+      return (state.inResearch = boolean)
     },
     setSearchText(state, text: string) {
-      console.log(text)
       return (state.searchText = text)
     },
     setSelectedSubCategory(state, subCategory) {
       return (state.selectedSubCategory = subCategory)
-    }
+    },
   },
   actions: {},
   modules: {},

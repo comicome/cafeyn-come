@@ -18,16 +18,25 @@
         <v-tabs
           next-icon=""
           prev-icon=""
-          slider-color="#67839B"
+          slider-color="#67839b"
           slider-size="4"
         >
-          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Tout')"
+          <v-tab
+            active-class="subcategory-active"
+            class="subcategory"
+            @click="setSelectedSubCategory('Tout')"
             >Tout</v-tab
           >
-          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Presse Nationale')"
+          <v-tab
+            active-class="subcategory-active"
+            class="subcategory"
+            @click="setSelectedSubCategory('Presse Nationale')"
             >Presse Nationale</v-tab
           >
-          <v-tab active-class="subcategory-active" class="subcategory" @click="setSelectedSubCategory('Presse Régionale')"
+          <v-tab
+            active-class="subcategory-active"
+            class="subcategory"
+            @click="setSelectedSubCategory('Presse Régionale')"
             >Presse Régionale</v-tab
           >
         </v-tabs>
@@ -55,10 +64,10 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .subcategories-container {
   height: 167px;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid $border-color;
 }
 
 .subcategory {
@@ -68,13 +77,13 @@ export default Vue.extend({
 }
 
 .v-tab--active.subcategory-active {
-  color: #1e323d;
+  color: $blue-cafeyn;
 }
 
 .category-title {
   font-family: 'Soleil-Light', Helvetica, Arial;
   font-size: 28px;
-  color: #67839b;
+  color: $darkblue-cafeyn;
 }
 
 .category-subtitle {

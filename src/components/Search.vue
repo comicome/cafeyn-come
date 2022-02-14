@@ -8,7 +8,25 @@
       @input="onInput($event)"
     >
     </v-text-field>
-    <v-row class="pa-5">
+    <v-row v-if="onSearch" class="pa-5">
+      <v-col
+        v-for="newspaper in [1, 2, 3, 4, 5, 6]"
+        :key="newspaper"
+        cols="6"
+        sm="3"
+        md="4"
+        lg="2"
+      >
+        <v-sheet color="grey lighten-4'" class="pa-3">
+          <v-skeleton-loader
+            class="mx-auto"
+            max-width="300"
+            type="card"
+          ></v-skeleton-loader>
+        </v-sheet>
+      </v-col>
+    </v-row>
+    <v-row v-else class="pa-5">
       <v-col
         v-for="newspaper in searchIssues"
         :key="newspaper.publicationId"
@@ -34,23 +52,22 @@ export default Vue.extend({
     Issue,
   },
   data: () => ({
-    timeout: 0
+    timeout: 0,
   }),
   computed: {
     ...mapState(['selectedCategory', 'subCategories', 'searchText']),
     ...mapGetters(['searchIssues']),
-    text: { 
+    text: {
       get() {
         return this.$store.state.searchText
       },
       set(value) {
         this.$store.commit('setSearchText', value)
-      }
+      },
     },
-  search(): any {
-    return this.$refs.search as any;
-  },
-
+    search(): any {
+      return this.$refs.search as any
+    },
   },
   methods: {
     ...mapMutations(['setSearchText']),
@@ -62,9 +79,7 @@ export default Vue.extend({
       this.timeout = setTimeout(() => {
         this.setSearchText(event)
       }, 500)
-    }
+    },
   },
 })
 </script>
-
-<style scoped></style>

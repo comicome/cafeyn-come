@@ -53,12 +53,12 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .categories-container {
   height: 100px;
   margin-top: 68px;
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .filters-btn {
@@ -68,12 +68,12 @@ export default Vue.extend({
 }
 .filters-btn:hover {
   background: rgba(103, 131, 155, 0.08);
-  color: #67839b;
+  color: $darkblue-cafeyn;
 }
 
 .active-btn {
   background: rgba(103, 131, 155, 0.08);
-  color: #67839b;
+  color: $darkblue-cafeyn;
 }
 
 @media (max-width: 960px) {
@@ -102,7 +102,7 @@ export default Vue.extend({
 }
 @media (max-width: 900px) {
   .categry-group {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid $border-color;
   }
 }
 </style>

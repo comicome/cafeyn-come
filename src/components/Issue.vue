@@ -61,7 +61,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .publication-title {
   font-family: 'Soleil', Helvetica, Arial;
   font-size: 14px;

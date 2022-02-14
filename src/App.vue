@@ -2,7 +2,7 @@
   <v-app>
     <Header />
     <main>
-      <div v-if="!onSearch">
+      <div v-if="!inResearch">
         <Categories />
         <SubCategories />
         <Grid />
@@ -32,7 +32,7 @@ export default {
     Search,
   },
   computed: {
-    ...mapState(['onSearch']),
+    ...mapState(['inResearch']),
   },
 }
 </script>
