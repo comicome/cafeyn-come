@@ -4,3 +4,8 @@ $grey-cafeyn: #536067;
 $darkblue-cafeyn: #67839b;
 $border-color: #ececec;
 $input-font-size: 14px;
+
+.v-slide-group__content .v-tabs-slider-wrapper div.v-tabs-slider {
+  width: 50%;
+  margin: auto;
+}
