@@ -101,10 +101,7 @@
         >
           Se connecter
         </v-btn>
-        <v-btn
-          class="header-btn hidden-sm-and-down ml-lg-3 login-btn"
-          rounded
-        >
+        <v-btn class="header-btn hidden-sm-and-down ml-lg-3 login-btn" rounded>
           S'inscrire
         </v-btn>
       </div>

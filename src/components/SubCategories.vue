@@ -13,7 +13,7 @@
         class="mr-16 ml-sm-5 mr-sm-0 ml-md-auto mr-md-0 pl-0 pt-7 pt-md-3 pb-sm-0 pr-0 pr-md-4"
       >
         <v-tabs
-          class='tabs'
+          class="tabs"
           next-icon=""
           prev-icon=""
           slider-color="#67839b"
