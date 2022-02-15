@@ -8,14 +8,14 @@
     class="navbar"
   >
     <v-btn
-      class="hidden-sm-and-up pl-4"
+      class="hidden-sm-and-up pl-5"
       icon
       @click="setInResearch(!inResearch)"
     >
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
-    <v-toolbar-title class="cafeyn-logo mr-lg-16 pr-2">
+    <v-toolbar-title class="cafeyn-logo mr-lg-16 pl-11 pl-md-8 pl-sm-5">
       <v-img
         alt="Cafeyn Logo"
         contain
@@ -25,11 +25,11 @@
         :width="isMobile()"
       />
     </v-toolbar-title>
-    <v-spacer class="hidden-md-and-up"></v-spacer>
+    <v-spacer class="hidden-sm-and-up"></v-spacer>
     <v-responsive
       v-show="!inResearch"
-      class="mr-0 ml-lg-16 mr-md-3 hidden-xs-only transition-swing pl-md-10 pl-lg-0"
-      max-width="420"
+      class="mr-0 hidden-xs-only transition-swing pl-md-10 pl-lg-0 ml-sm-12 ml-lg-0"
+      max-width="400"
     >
       <v-text-field
         ref="search"
@@ -44,14 +44,14 @@
     </v-responsive>
     <v-spacer class="hidden-sm-and-down"></v-spacer>
 
-    <div v-if="!inResearch" class="d-flex align-center pr-sm-5 pl-sm-16 pr-4">
+    <div v-if="!inResearch" class="d-flex align-center pl-sm-16 pr-4 pr-md-0">
       <v-btn
         elevation="1"
         icon
         outlined
         height="38"
         width="38"
-        class="rounded-circle gift-btn mr-2 mr-sm-4"
+        class="rounded-circle gift-btn mr-3 mr-sm-4"
         color="#ececec"
       >
         <a target="_blank" href="https://www.cafeyn.co/fr/gift/offers">
@@ -72,7 +72,7 @@
             outlined
             rounded
             color="grey lighten-2"
-            class="hidden-md-and-up menu ml-2 ml-sm-4 lk-login"
+            class="hidden-md-and-up menu ml-3 ml-sm-4 lk-login"
             v-bind="attrs"
             v-on="on"
           >
@@ -91,7 +91,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <div class="pl-md-5 ml-lg-5">
+      <div class="pl-md-3">
         <v-btn
           class="header-btn hidden-sm-and-down"
           rounded
@@ -102,7 +102,7 @@
           Se connecter
         </v-btn>
         <v-btn
-          class="header-btn hidden-sm-and-down ml-lg-5 mr-lg-10 login-btn"
+          class="header-btn hidden-sm-and-down ml-lg-3 login-btn"
           rounded
         >
           S'inscrire

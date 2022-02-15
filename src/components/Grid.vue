@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="mt-sm-15 mt-5">
-    <v-row :no-gutters="isMobileOrTablet()" class="pa-5">
+  <v-container fluid class="mt-sm-12 mt-0 mt-5">
+    <v-row :no-gutters="isMobileOrTablet()" class="pa-5 pa-md-auto">
       <v-col
         v-for="newspaper in filteredPublicationsCategory"
         :key="newspaper.publicationId"

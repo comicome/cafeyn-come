@@ -3,19 +3,17 @@
     <v-row align="center" justify="space-around">
       <v-col
         cols="12"
-        class="pa-lg-5 pb-lg-0 pt-lg-10 pl-lg-10 pb-sm-3 pl-sm-9 pl-5"
+        class="pa-lg-5 pb-lg-0 pt-lg-10 pl-lg-10 pb-sm-3 pl-sm-9 pl-10"
       >
         <h1 class="category-title">{{ selectedCategory }}</h1>
         <h2 class="category-subtitle">L'actu à très très chaud</h2>
       </v-col>
       <v-col
         cols="12"
-        md="4"
-        sm="12"
-        offset-md="8"
-        class="mr-16 ml-sm-5 mr-sm-0 mr-md-0 pl-0 pt-7 pt-md-3 pb-sm-0 ml-md-auto"
+        class="mr-16 ml-sm-5 mr-sm-0 ml-md-auto mr-md-0 pl-0 pt-7 pt-md-3 pb-sm-0 pr-0 pr-md-4"
       >
         <v-tabs
+          class='tabs'
           next-icon=""
           prev-icon=""
           slider-color="#67839b"

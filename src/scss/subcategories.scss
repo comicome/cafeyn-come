@@ -3,6 +3,11 @@
   border-bottom: 1px solid $border-color;
 }
 
+.tabs {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .subcategory {
   font-family: 'Soleil-bold', Helvetica, Arial;
   font-size: 12px;
@@ -23,4 +28,17 @@
   font-family: 'Soleil', Helvetica, Arial;
   font-size: 16px;
   color: $blue-cafeyn;
+}
+
+@media (max-width: 960px) {
+  .tabs {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .mr-16 {
+    margin-right: 80px !important;
+  }
 }
