@@ -20,11 +20,15 @@
   color: $darkblue-cafeyn;
 }
 
+button.v-btn:not(.v-btn--round).v-size--default {
+  padding: 0 8px;
+}
+
 @media (max-width: 960px) {
   button.v-btn:not(.v-btn--round).v-size--default {
     padding: 0 11px;
   }
-  .categry-group {
+  .category-group {
     padding: 16px 24px;
   }
   .categories-container {
@@ -32,6 +36,10 @@
     margin-top: 60px;
     border: none;
   }
+  button.v-btn:not(.v-btn--round).v-size--default {
+    padding: 0 6px;
+  }
+  
 }
 
 @media (max-width: 600px) {
@@ -45,7 +53,7 @@
   }
 }
 @media (max-width: 900px) {
-  .categry-group {
+  .category-group {
     border-top: 1px solid $border-color;
   }
 }

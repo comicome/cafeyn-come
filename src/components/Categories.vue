@@ -6,7 +6,7 @@
         next-icon=""
         prev-icon=""
         active-class="primary--text"
-        class="ml-lg-8 categry-group"
+        class="pl-7 pl-sm-auto category-group"
       >
         <v-btn
           v-for="category in categories"
