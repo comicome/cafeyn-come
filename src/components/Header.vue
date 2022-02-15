@@ -7,11 +7,15 @@
     height="80"
     class="navbar"
   >
-    <v-btn class="hidden-sm-and-up" icon @click="setInResearch(!inResearch)">
+    <v-btn
+      class="hidden-sm-and-up pl-4"
+      icon
+      @click="setInResearch(!inResearch)"
+    >
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
-    <v-toolbar-title class="cafeyn-logo mr-lg-16">
+    <v-toolbar-title class="cafeyn-logo mr-lg-16 pr-2">
       <v-img
         alt="Cafeyn Logo"
         contain
@@ -24,7 +28,7 @@
     <v-spacer class="hidden-md-and-up"></v-spacer>
     <v-responsive
       v-show="!inResearch"
-      class="mr-0 ml-lg-16 mr-md-3 hidden-xs-only transition-swing"
+      class="mr-0 ml-lg-16 mr-md-3 hidden-xs-only transition-swing pl-md-10 pl-lg-0"
       max-width="420"
     >
       <v-text-field
@@ -40,7 +44,7 @@
     </v-responsive>
     <v-spacer class="hidden-sm-and-down"></v-spacer>
 
-    <div v-if="!inResearch" class="d-flex align-center pr-sm-5 pl-sm-16">
+    <div v-if="!inResearch" class="d-flex align-center pr-sm-5 pl-sm-16 pr-4">
       <v-btn
         elevation="1"
         icon
@@ -68,12 +72,11 @@
             outlined
             rounded
             color="grey lighten-2"
-            class="hidden-md-and-up menu ml-2 ml-sm-4"
+            class="hidden-md-and-up menu ml-2 ml-sm-4 lk-login"
             v-bind="attrs"
             v-on="on"
           >
             <v-img
-              alt="Cafeyn Logo"
               contain
               :src="require('../assets/img/lk-login.svg')"
               height="20"
@@ -88,26 +91,28 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn
-        class="header-btn hidden-sm-and-down ml-lg-5"
-        rounded
-        outlined
-        color="#1e323d"
-        dark
-      >
-        Se connecter
-      </v-btn>
-      <v-btn
-        class="header-btn hidden-sm-and-down ml-lg-5 mr-lg-10 login-btn"
-        rounded
-      >
-        S'inscrire
-      </v-btn>
+      <div class="pl-md-5 ml-lg-5">
+        <v-btn
+          class="header-btn hidden-sm-and-down"
+          rounded
+          outlined
+          color="#1e323d"
+          dark
+        >
+          Se connecter
+        </v-btn>
+        <v-btn
+          class="header-btn hidden-sm-and-down ml-lg-5 mr-lg-10 login-btn"
+          rounded
+        >
+          S'inscrire
+        </v-btn>
+      </div>
     </div>
     <v-btn
       small
       v-show="inResearch"
-      class="mr-10"
+      class="ml-10 mr-md-10"
       icon
       outlined
       @click="setInResearch(!inResearch)"

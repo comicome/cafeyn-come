@@ -16,6 +16,14 @@
   }
 }
 
+@media (max-width: 600px) {
+  .v-btn.v-size--default.lk-login {
+    height: 38px;
+    min-width: 44px;
+    padding: 0 6px;
+  }
+}
+
 .separator {
   height: 40px;
 }
